@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "submited_forms",
+  "info": {
+    "singularName": "submited-form",
+    "pluralName": "submited-forms",
+    "displayName": "Submited Form"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "text"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Subject": {
+      "type": "text"
+    },
+    "Message": {
+      "type": "text"
+    }
+  }
+}
