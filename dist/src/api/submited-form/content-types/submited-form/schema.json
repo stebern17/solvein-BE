@@ -14,14 +14,14 @@
         "Name": {
             "type": "text"
         },
-        "Email": {
-            "type": "email"
-        },
         "Subject": {
             "type": "text"
         },
         "Message": {
             "type": "text"
+        },
+        "WhatsappNumber": {
+            "type": "string"
         }
     }
 }
