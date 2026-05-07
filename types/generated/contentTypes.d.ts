@@ -493,6 +493,37 @@ export interface ApiMainClientMainClient extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiServiceService extends Struct.CollectionTypeSchema {
+  collectionName: 'services';
+  info: {
+    displayName: 'Service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service.service'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    Point: Schema.Attribute.Component<'service.service-point', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSubmitedFormSubmitedForm
   extends Struct.CollectionTypeSchema {
   collectionName: 'submited_forms';
@@ -1039,6 +1070,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::client.client': ApiClientClient;
       'api::main-client.main-client': ApiMainClientMainClient;
+      'api::service.service': ApiServiceService;
       'api::submited-form.submited-form': ApiSubmitedFormSubmitedForm;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
