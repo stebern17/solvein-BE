@@ -42,3 +42,6 @@ public/uploads
 # Editor
 .vscode
 .idea
+
+# Database import
+export_20260522065851.tar.gz
